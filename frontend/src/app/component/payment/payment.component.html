@@ -1,0 +1,78 @@
+<!-- <form *ngIf="paymentid && paymentid.trim() !== ''" [formGroup]="paymentForm" (ngSubmit)="pay()">
+
+    <h2>Selected Courses</h2>
+
+    <label>Enter Amount :</label>
+    <input type="text" id = "amount" formControlName="amount">
+    <button type="submit">Payment</button>
+    
+
+
+</form> -->
+<div *ngIf="paymentid"  >
+    <h2>Payment Successful!</h2>
+    
+<table>
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <td>{{ personalInfo.name }}</td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>{{ personalInfo.email }}</td>
+    </tr>
+    <tr>
+      <th>Phone</th>
+      <td>{{ personalInfo.phoneNumber }}</td>
+    </tr>
+    <tr>
+      <th>Paid Amount</th>
+      <td>${{ totalAmount }}</td> <!-- ✅ Amount formatted as currency -->
+    </tr>
+    <tr>
+      <th>Payment ID</th>
+      <td>{{ paymentId }}</td>
+    </tr>
+    <tr>
+      <th>Order ID</th>
+      <td>{{ orderId }}</td>
+    </tr>
+  </tbody>
+</table>
+  
+</div>
+<div *ngIf="!paymentid"  >
+    <table *ngIf="selectedCourses.length > 0; else noCourses">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Amount ($)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let course of selectedCourses">
+            <td>{{ course.courseName }}</td>
+            <td>${{ course.amount }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><strong>Total Amount:</strong></td>
+            <td><strong>${{ totalAmount }}</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+      
+      <!-- Show message if no courses selected -->
+      <ng-template #noCourses>
+        <p>No courses selected. Please go back and select at least one course.</p>
+      </ng-template>
+      <h2>Proceed with Payment</h2>
+      <p>Amount: ₹{{ paymentAmount }}</p>
+      
+<div class="payment-button-container">
+  <button (click)="pay()" class="payment-button">Proceed to Payment</button>
+</div>
+
+</div>

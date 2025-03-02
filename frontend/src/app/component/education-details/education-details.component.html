@@ -1,0 +1,31 @@
+<form [formGroup]="form">
+    <div class="container">
+        <div class="row m-3">
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    College Name
+                </mat-label>
+                <input matInput formControlName="college" placeholder="Enter your College Name">
+                <mat-error *ngIf="form.get('college')?.invalid">College Name is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row m-3">
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    Year Of PassOut
+                </mat-label>
+                <input matInput formControlName="year" placeholder="Enter your Year Of PassOut">
+                <mat-error *ngIf="form.get('year')?.invalid">Year Of PassOut is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row m-3">
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    CGPA
+                </mat-label>
+                <input matInput formControlName="cgpa" placeholder="Enter your CGPA">
+                <mat-error *ngIf="form.get('cgpa')?.invalid">CGPA is required</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+</form>

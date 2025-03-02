@@ -1,0 +1,36 @@
+<form [formGroup]="form">
+    <div class="container">
+        <div class="row m-3" >
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    Name
+                </mat-label>
+                <input  matInput formControlName="name" placeholder="Enter your name">
+                <mat-error *ngIf="form.get('name')?.invalid">Name is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row m-3" >
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    Email
+                </mat-label>
+                <input matInput formControlName="email" placeholder="Enter your email">
+                <mat-error *ngIf="form.get('email')?.invalid">Email is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row m-3" >
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    Phone Number
+                </mat-label>
+                <input matInput formControlName="phoneNumber" placeholder="Enter your phoneNumber">
+                <mat-error *ngIf="form.get('phoneNumber')?.invalid">Phone Number is required</mat-error>
+            </mat-form-field>
+        </div>
+            
+              
+             
+            
+       
+    </div>
+</form>

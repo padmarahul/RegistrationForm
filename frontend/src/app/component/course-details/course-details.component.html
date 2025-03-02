@@ -1,0 +1,15 @@
+<h2>Select Courses</h2>
+
+<mat-selection-list>
+  <mat-list-option *ngFor="let course of courses; trackBy: trackByCourse"
+    [value]="course"
+    [selected]="isChecked(course)"
+    (click)="onCourseChange(course, $event)">
+    
+    {{ course.courseName }} - RS.{{ course.amount }}
+
+  </mat-list-option>
+</mat-selection-list>
+
+<p>Options selected: {{ listofcourses.length }}</p>
+

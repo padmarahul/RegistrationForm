@@ -1,0 +1,49 @@
+<form [formGroup]="form">
+    <div class="container">
+        <div class="row m-3">
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    Address
+                </mat-label>
+                <input matInput formControlName="address" placeholder="Enter your Address">
+                <mat-error *ngIf="form.get('address')?.invalid">Address is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row m-3">
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    City
+                </mat-label>
+                <input matInput formControlName="city" placeholder="Enter your City">
+                <mat-error *ngIf="form.get('city')?.invalid">City is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row m-3">
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    State
+                </mat-label>
+                <input matInput formControlName="state" placeholder="Enter your State">
+                <mat-error *ngIf="form.get('state')?.invalid">State is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row m-3">
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    Country
+                </mat-label>
+                <input matInput formControlName="country" placeholder="Enter your Country">
+                <mat-error *ngIf="form.get('country')?.invalid">Country is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row m-3">
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    Zip Code
+                </mat-label>
+                <input matInput formControlName="zipcode" placeholder="Enter your Zip Code">
+                <mat-error *ngIf="form.get('zipcode')?.invalid">Zip Code is required</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+</form>

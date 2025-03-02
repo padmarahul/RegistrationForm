@@ -1,0 +1,62 @@
+<!-- ✅ Mat Stepper (Working) -->
+><div class="containerr">
+
+    <div class="container">
+        <mat-horizontal-stepper #stepper linear>
+            <mat-step [stepControl]="personalForm">
+                <ng-template matStepLabel>Personal Information</ng-template>
+                <app-personal-detais></app-personal-detais>
+                <div class="container">
+                    <div class="button-container">
+                        <button mat-button class="my-button back-button" matStepperPrevious>Back</button>
+                        <button mat-button class="my-button" matStepperNext (click)="userdetails()">Next</button>
+                    </div>
+                </div>
+            </mat-step>
+            <mat-step [stepControl]="addressForm">
+                <ng-template matStepLabel>Address Information</ng-template>
+                <app-address-details></app-address-details>
+                <div class="container">
+                    <div class="button-container">
+                        <button mat-button class="my-button back-button" matStepperPrevious>Back</button>
+                        <button mat-button class="my-button" matStepperNext>Next</button>
+                    </div>
+                </div>
+            </mat-step>
+            <mat-step [stepControl]="educationForm">
+                <ng-template matStepLabel>Education Information</ng-template>
+                <app-education-details></app-education-details>
+                <div class="container">
+                    <div class="button-container">
+                        <button mat-button class="my-button back-button" matStepperPrevious>Back</button>
+                        <button mat-button class="my-button" matStepperNext>Next</button>
+                    </div>
+                </div>
+            </mat-step>
+            <mat-step [stepControl]="courseForm">
+                <ng-template matStepLabel>Course Information</ng-template>
+                <app-course-details></app-course-details>
+                <div class="container">
+                    <div class="button-container">
+                        <button mat-button class="my-button back-button" matStepperPrevious>Back</button>
+                        <button mat-button class="my-button" matStepperNext (click)="payment1()">Next</button>
+                    </div>
+                </div>
+            </mat-step>
+            <mat-step >
+                <ng-template matStepLabel>Payment Information</ng-template>
+                <app-payment [selectedCourses]="listofcourses" [personalInfo]="personalInfo" (paymentStatus)="onPaymentSuccess($event)"></app-payment>
+
+                <div class="container">
+                    <div class="button-container">
+                        <button mat-button class="my-button back-button" matStepperPrevious
+                            [disabled]="true">Back</button>
+                       <button mat-button class="my-button" matStepperNext (click)="submit()"  [disabled]="!paymentSuccess" >Submit</button>
+                    </div>
+                </div>
+            </mat-step>
+
+
+        </mat-horizontal-stepper>
+    </div>
+</div>

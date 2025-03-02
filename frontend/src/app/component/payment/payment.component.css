@@ -1,0 +1,47 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 18px; /* ✅ Larger text */
+  }
+
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  /* ✅ Center the Payment Button */
+.payment-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* ✅ Stylish Payment Button */
+.payment-button {
+  background-color: #28a745; /* Green color for payment button */
+  color: white;
+  padding: 15px 35px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Hover Effect */
+.payment-button:hover {
+  background-color: #218838;
+  transform: scale(1.08);
+}
+
+/* ✅ Click Effect */
+.payment-button:active {
+  transform: scale(0.98);
+}
